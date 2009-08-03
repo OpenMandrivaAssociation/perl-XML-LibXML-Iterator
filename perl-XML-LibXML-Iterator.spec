@@ -1,21 +1,20 @@
-%define module	XML-LibXML-Iterator
-%define name	perl-%{module}
-%define version 1.04
-%define release %mkrel 3
+%define upstream_name	 XML-LibXML-Iterator
+%define upstream_version 1.04
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	XML::LibXML's Tree Iteration Class
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/XML/%{module}-%{version}.tar.bz2
-Url:		http://search.cpan.org/dist/%{module}
-BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:  perl-devel 
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/XML/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildRequires:  perl(XML::LibXML)
 BuildRequires:  perl(XML::NodeFilter)
+BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 XML::LibXML::Iterator is an iterator class for XML::LibXML parsed documents.
@@ -23,7 +22,7 @@ This class allows to iterate the document tree as it were a linear data
 structure.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -42,4 +41,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc Changes README
 %{perl_vendorlib}/XML/*
 %{_mandir}/*/*
-
