@@ -1,15 +1,15 @@
 %define upstream_name	 XML-LibXML-Iterator
-%define upstream_version 1.04
+%define upstream_version 1.06
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	XML::LibXML's Tree Iteration Class
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/XML/%{upstream_name}-%{upstream_version}.tar.bz2
+Url:		https://github.com/shlomif/xml-libxml-iterator
+Source0:	https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/XML-LibXML-Iterator-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
