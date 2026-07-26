@@ -1,15 +1,13 @@
 %define upstream_name	 XML-LibXML-Iterator
-%define upstream_version 1.06
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	1.06
+Release:	2
 
 Summary:	XML::LibXML's Tree Iteration Class
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/shlomif/xml-libxml-iterator
-Source0:	https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/XML-LibXML-Iterator-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/XML-LibXML-Iterator-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -23,7 +21,7 @@ This class allows to iterate the document tree as it were a linear data
 structure.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -43,9 +41,7 @@ make test
 %changelog
 * Mon Aug 03 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 1.40.0-1mdv2010.0
 + Revision: 408240
-- rebuild using %%perl_convert_version
-
-* Wed Jul 23 2008 Thierry Vignaud <tvignaud@mandriva.com> 1.04-3mdv2009.0
+- rebuild using %1.06 Wed Jul 23 2008 Thierry Vignaud <tvignaud@mandriva.com> 1.04-3mdv2009.0
 + Revision: 242245
 - rebuild
 - kill re-definition of %%buildroot on Pixel's request
